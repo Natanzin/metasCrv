@@ -10,11 +10,6 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Metas CRV</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-  <!--TABLEDATA-->
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
-  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 </head>
 
 <body>
@@ -25,7 +20,7 @@ session_start();
       </div>
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
         <li><a href="?page=home" class="nav-link px-2 link-dark">Início</a></li>
-        <li><a href="?page=pedidos" class="nav-link px-2 link-dark">Pedidos</a></li>
+        <li><a href="?page=pedidos&pagina=0" class="nav-link px-2 link-dark">Pedidos</a></li>
         <li><a href="?page=metas" class="nav-link px-2 link-dark">Metas</a></li>
       </ul>
 
@@ -50,9 +45,6 @@ session_start();
             break;
           case "salvar_pedido":
             include("../pages/pedidos/salvar_pedido.php");
-            break;
-          case "pesq_pedido":
-            include("../pages/pedidos/pesq_pedidos.php");
             break;
           case "form_pedido":
             include("../pages/pedidos/form_pedido.php");
