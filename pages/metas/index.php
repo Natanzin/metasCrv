@@ -18,30 +18,31 @@ if ($qtd > 0) { ?>
         <th>Ano Fiscal</th>
         <th>Período</th>
         <th>Meta Prevista</th>
-        <th>Meta Corrigida</th>
         <th>Realizado</th>
         <th>% de Cobertura</th>
         <th>Participação</th>
-        <th>Meta Acumulada</th>
         <th>Ação</th>
       </tr>
     </thead>
     <tbody>
+
       <?php while ($row = $res->fetch_object()) {
+        //realizado por período
         $sqlPedidos = "SELECT desc_periodo, SUM(vlr_pedido) as total_vendas FROM pedido WHERE desc_periodo = '{$row->desc_periodo}' AND id_empresa = $empresa";
         $queryPedidos = $conn->query($sqlPedidos);
         $pedido = $queryPedidos->fetch_object();
+        //calculo de participação da meta
         $participacao = $pedido->total_vendas - $row->previsao_meta;
+        //calculo de % de cobertura
+        $percent_cobertura = ($pedido->total_vendas / $row->previsao_meta) * 100;
       ?>
         <tr>
           <td><?php print $row->ano_fiscal ?></td>
           <td><?php print date('M/Y', strtotime($row->periodo_meta)) ?></td>
           <td>R$<?php print number_format($row->previsao_meta, 2, ',', '.')  ?></td>
-          <td></td>
           <td>R$<?php print number_format($pedido->total_vendas, 2, ',', '.')  ?></td>
-          <td><?php print number_format($pedido->total_vendas / $row->previsao_meta * 100, 2)  ?>%</td>
+          <td><?php print number_format($percent_cobertura, 2)  ?>%</td>
           <td class="<?php $participacao <= 0 ? print 'table-danger' : print 'table-info'; ?>">R$<?php print number_format($participacao, 2, ',', '.')  ?></td>
-          <td></td>
           <td><a href="?page=detalhe_meta&id=<?php echo $row->id_meta ?>" class="btn-sm btn btn-primary">Detalhe</a></td>
         </tr>
       <?php } ?>

@@ -126,7 +126,7 @@ $row = $res->fetch_object();
   <div class="row">
     <div class="col">
       <div class="mb-3">
-        <button class="btn btn-primary" type="submit">Cadastrar</button>
+        <button class="btn btn-primary" type="submit">Salvar</button>
       </div>
     </div>
   </div>

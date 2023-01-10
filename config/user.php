@@ -3,6 +3,10 @@
 <h2>Usuário</h2>
 <form action="../auth/alteraSenha.php" method="POST">
   <div class="mb-3">
+    <label for="">Área</label>
+    <input disabled type="text" value="<?php echo $_SESSION['cod_area']; ?>" class="form-control">
+  </div>
+  <div class="mb-3">
     <label for="">Empresa</label>
     <input disabled type="text" value="<?php echo $_SESSION['cod_empresa'] . " - " . $_SESSION['nome_empresa']; ?>" class="form-control">
   </div>

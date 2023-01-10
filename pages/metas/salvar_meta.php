@@ -29,7 +29,7 @@ switch ($_REQUEST["acao"]) {
           '{$ticket_medio_ano_anterior}', 
           '{$empresa}') ";
 
-    $sql_conferencia = "SELECT * FROM metas WHERE periodo_meta = '{$periodo_meta}' AND ano_fiscal = '{$ano_fiscal}'";
+    $sql_conferencia = "SELECT * FROM metas WHERE periodo_meta = '{$periodo_meta}' AND ano_fiscal = '{$ano_fiscal}' AND id_empresa = '{$empresa}'";
     $confere = $conn->query($sql_conferencia);
     $conferencia = mysqli_num_rows($confere);
     if ($conferencia > 0) {

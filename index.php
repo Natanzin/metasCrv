@@ -37,14 +37,12 @@ session_start();
             if (isset($_SESSION['loginErro'])) {
               echo $_SESSION['loginErro'];
               unset($_SESSION['loginErro']);
-            } ?>
-          </p>
-          <p>
-            <?php
-            //Recuperando o valor da variável global, deslogado com sucesso.
-            if (isset($_SESSION['logindeslogado'])) {
+            } else if (isset($_SESSION['logindeslogado'])) {
               echo $_SESSION['logindeslogado'];
               unset($_SESSION['logindeslogado']);
+            } else if (isset($_SESSION['situacaoErro'])) {
+              echo $_SESSION['situacaoErro'];
+              unset($_SESSION['situacaoErro']);
             }
             ?>
           </p>

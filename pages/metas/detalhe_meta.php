@@ -5,7 +5,6 @@ $result = $conn->query($sql);
 $item = mysqli_fetch_assoc($result);
 
 
-
 ?>
 
 <div class="row">
@@ -33,21 +32,17 @@ $item = mysqli_fetch_assoc($result);
       </th>
     </tr>
     <tr>
-      <th colspan="2">Meta Prevista</th>
-      <th>Meta Corrigida</th>
+      <th colspan="3">Meta Prevista</th>
       <th colspan="2">Realizado</th>
-      <th>% de Cobertura</th>
-      <th>Participação</th>
-      <th colspan="2">Meta Acumulada</th>
+      <th colspan="2">% de Cobertura</th>
+      <th colspan="2">Participação</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td colspan="2">R$<?php print number_format($item['previsao_meta'], 2, ',', '.')  ?></td>
-      <td></td>
+      <td colspan="3">R$<?php print number_format($item['previsao_meta'], 2, ',', '.')  ?></td>
       <td colspan="2"></td>
-      <td></td>
-      <td></td>
+      <td colspan="2"></td>
       <td colspan="2"></td>
     </tr>
   </tbody>

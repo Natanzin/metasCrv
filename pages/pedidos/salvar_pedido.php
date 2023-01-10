@@ -41,10 +41,10 @@ switch ($_REQUEST["acao"]) {
 
     if ($res == true) {
       print "<script>alert('Pedido cadastrado com sucesso!')</script>";
-      print "<script>location.href='?page=pedidos'</script>";
+      print "<script>location.href='?page=pedidos&pagina=0'</script>";
     } else {
       print "<script>alert('Não foi possível cadastrar o pedido!')</script>";
-      print "<script>location.href='?page=pedidos'</script>";
+      print "<script>location.href='?page=pedidos&pagina=0'</script>";
     }
     break;
 
@@ -84,10 +84,10 @@ switch ($_REQUEST["acao"]) {
 
     if ($res == true) {
       print "<script>alert('Pedido editado com sucesso!')</script>";
-      print "<script>location.href='?page=pedidos'</script>";
+      print "<script>location.href='?page=pedidos&pagina=0'</script>";
     } else {
       print "<script>alert('Não foi possível editar o pedido!')</script>";
-      print "<script>location.href='?page=pedidos'</script>";
+      print "<script>location.href='?page=pedidos&pagina=0'</script>";
     }
     break;
 
@@ -98,10 +98,10 @@ switch ($_REQUEST["acao"]) {
 
     if ($res == true) {
       print "<script>alert('Pedido excluído com sucesso!')</script>";
-      print "<script>location.href='?page=pedidos'</script>";
+      print "<script>location.href='?page=pedidos&pagina=0'</script>";
     } else {
       print "<script>alert('Não foi possível excluir o pedido!')</script>";
-      print "<script>location.href='?page=pedidos'</script>";
+      print "<script>location.href='?page=pedidos&pagina=0'</script>";
     }
     break;
 }

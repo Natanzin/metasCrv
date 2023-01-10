@@ -21,7 +21,11 @@ session_start();
       </div>
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
         <li><a href="?page=home" class="nav-link px-2 link-dark">Início</a></li>
-        <li><a href="?page=pedidos&pagina=0" class="nav-link px-2 link-dark">Pedidos</a></li>
+        <?php
+        //botão Pedidos aparecerá somente para consultores
+        $_SESSION['tipo_acesso'] == '3' ?
+          print '<li><a href="?page=pedidos&pagina=0" class="nav-link px-2 link-dark">Pedidos</a></li>' : 0
+        ?>
         <li><a href="?page=metas" class="nav-link px-2 link-dark">Metas</a></li>
       </ul>
 
